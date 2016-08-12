@@ -435,6 +435,19 @@ attachments, create new maildirs, and so on.")
 @code{notmuch} mail.  It is written in Python using the @code{urwid} toolkit.")
     (license gpl3+)))
 
+(define-public alot-git
+  (package (inherit alot)
+    (version "git747b")
+    (source (origin
+              (method git-fetch)
+              ; v0.3.7 not on PyPi yet, so use github instead
+              (uri (git-reference
+                     (url (string-append "https://github.com/pazz/alot"))
+                     (commit "747b894bbe2156bae2c1f128ec0b4344d7c28378")))
+              (sha256
+               (base32
+                "1w4cppykh5h5j3q770adlmnkiwfz9dq2nr10qi1hdi5xrsvwnj2p"))))))
+
 (define-public notmuch
   (package
     (name "notmuch")
