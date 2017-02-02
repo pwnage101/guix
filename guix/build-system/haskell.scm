@@ -46,7 +46,7 @@
   "Return the default Haskell package."
   ;; Lazily resolve the binding to avoid a circular dependency.
   (let ((haskell (resolve-interface '(gnu packages haskell))))
-    (module-ref haskell 'ghc)))
+    (module-ref haskell 'ghc-8)))
 
 (define* (lower name
                 #:key source inputs native-inputs outputs system target
